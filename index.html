@@ -2,10 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Minecraft Datapack Studio</title>
+  <title>DJ's Datapacks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Pixel / gaming font -->
+  <!-- SEO Meta -->
+  <meta name="description" content="Custom Minecraft datapacks made to order by DJ's Datapacks. Professionally built datapacks for survival worlds, SMP servers, adventure maps, and minigames.">
+  <meta name="keywords" content="minecraft datapacks, custom datapacks, minecraft freelancer, SMP datapack, minigame datapack, datapack commissions, minecraft plugins">
+  <meta name="author" content="DJ's Datapacks">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DJ's Datapacks">
+  <meta property="og:description" content="Custom-made Minecraft datapacks for servers and singleplayer worlds.">
+  <meta property="og:image" content="https://DJUSh0rts.github.io/Datapack-Request-Website/favicon.png">
+  <meta property="og:url" content="https://DJUSh0rts.github.io/Datapack-Request-Website/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DJ's Datapacks">
+  <meta name="twitter:description" content="Custom-made Minecraft datapacks for servers and singleplayer worlds.">
+  <meta name="twitter:image" content="https://DJUSh0rts.github.io/Datapack-Request-Website/favicon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="theme-color" content="#3fb34f">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <style>
@@ -63,7 +86,7 @@
       position: relative;
     }
     .logo-icon::after {
-      content:"";
+      content: "";
       position: absolute;
       inset: 7px;
       background: linear-gradient(to bottom, #8b5a2b, #5b3b1f);
@@ -87,10 +110,7 @@
       border: var(--border-pixel) solid transparent;
       font-size: 0.85rem;
     }
-    nav a:hover {
-      border-color: var(--accent-green);
-      background: #111;
-    }
+    nav a:hover { border-color: var(--accent-green); background: #111; }
 
     .hero {
       background: linear-gradient(to bottom, rgba(8,18,10,0.9), rgba(7,10,10,0.95));
@@ -103,7 +123,7 @@
       margin: 0 auto;
       padding: 4rem 1rem 3rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0,1.5fr) minmax(0,1fr);
       gap: 2rem;
     }
 
@@ -114,20 +134,14 @@
       margin-bottom: 1rem;
       text-transform: uppercase;
     }
-    .hero-title span {
-      color: var(--accent-green-light);
-    }
+    .hero-title span { color: var(--accent-green-light); }
 
-    .hero-subtitle {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      max-width: 500px;
-    }
+    .hero-subtitle { color: var(--text-muted); margin-bottom: 1.5rem; max-width: 500px; }
 
     .badge {
       display: inline-block;
       padding: 0.3rem 0.6rem;
-      margin: 0.2rem 0.2rem 0.2rem 0;
+      margin: 0.2rem;
       border: var(--border-pixel) solid #000;
       font-size: 0.7rem;
       background: #222;
@@ -178,11 +192,7 @@
       font-size: 0.9rem;
     }
 
-    main {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 3rem 1rem 4rem;
-    }
+    main { max-width: var(--max-width); margin: 0 auto; padding: 3rem 1rem 4rem; }
 
     .section-title {
       font-family: 'Press Start 2P';
@@ -244,14 +254,16 @@
       font-size: 0.9rem;
     }
 
-    /* Styled email contact box */
     .contact-grid {
       display: grid;
       gap: 2rem;
       align-items: flex-start;
     }
+
     @media(min-width: 860px) {
-      .contact-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+      .contact-grid {
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      }
     }
 
     .form-card {
@@ -314,13 +326,17 @@
       font-family: inherit;
       font-size: 0.9rem;
     }
+
     input:focus, select:focus, textarea:focus {
       outline: none;
       border-color: var(--accent-green);
       box-shadow: 0 0 0 3px #3fb34f55;
     }
 
-    textarea { min-height: 120px; resize: vertical; }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
 
     .faq {
       background: #151919;
@@ -329,12 +345,16 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .faq-item { margin-bottom: 1rem; }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
     .faq-question {
       cursor: pointer;
       display: flex;
       justify-content: space-between;
     }
+
     .faq-answer {
       max-height: 0;
       overflow: hidden;
@@ -342,6 +362,7 @@
       font-size: 0.9rem;
       color: var(--text-muted);
     }
+
     .faq-item.open .faq-answer {
       max-height: 200px;
       margin-top: 0.4rem;
@@ -357,8 +378,12 @@
     }
 
     @media(max-width: 720px) {
-      .hero-inner { grid-template-columns: minmax(0, 1fr); }
-      .hero-card { order: -1; }
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
     }
   </style>
 </head>
@@ -369,7 +394,7 @@
   <div class="nav">
     <div class="logo">
       <div class="logo-icon"></div>
-      <div class="logo-text">Datapack Studio</div>
+      <div class="logo-text">DJ's Datapacks</div>
     </div>
 
     <nav>
@@ -403,7 +428,6 @@
       <br><br>
 
       <a href="#contact" class="btn btn-primary">📨 Request a Datapack</a>
-      <!-- Replace with your real email -->
       <a href="mailto:dj.shorts.business@gmail.com" class="btn btn-ghost">📧 Email Me Directly</a>
     </div>
 
@@ -500,53 +524,45 @@
   <h2 class="section-title">Request a Datapack</h2>
 
   <div class="contact-grid">
-    <!-- Styled email form card -->
     <div class="form-card">
-      <!-- 🔸 Formspree form: replace action with your real Formspree endpoint -->
-       <Form
-  action="https://formspree.io/f/mbleovyp"
-  method="POST"
->
-  <label for="name">Name / Username</label>
-  <input id="name" name="name" type="text" required placeholder="Steve, Alex, ServerOwner123">
+      <form action="https://formspree.io/f/mbleovyp" method="POST">
 
-  <label for="email">Your Email</label>
-  <input id="email" name="email" type="email" required placeholder="youremail.example@gmail.com">
+        <label for="name">Name / Username</label>
+        <input id="name" name="name" type="text" required placeholder="Steve, Alex, ServerOwner123">
 
-  <label for="mc_version">Minecraft Version</label>
-  <input id="mc_version" name="mc_version" type="text" placeholder="e.g. 1.21.4">
+        <label for="email">Your Email</label>
+        <input id="email" name="email" type="email" required placeholder="youremail.example@gmail.com">
 
-  <label for="type">Pack Type</label>
-  <select id="type" name="type">
-    <option>Small tweak / QoL</option>
-    <option>Mechanics / SMP</option>
-    <option>Minigame</option>
-    <option>Adventure / map-specific</option>
-  </select>
+        <label for="mc_version">Minecraft Version</label>
+        <input id="mc_version" name="mc_version" type="text" placeholder="e.g. 1.21.4">
 
-  <label for="details">Idea & Details</label>
-  <textarea id="details" name="details" required></textarea>
+        <label for="type">Pack Type</label>
+        <select id="type" name="type">
+          <option>Small tweak / QoL</option>
+          <option>Mechanics / SMP</option>
+          <option>Minigame</option>
+          <option>Adventure / map-specific</option>
+        </select>
 
-  <!-- Optional hidden field: redirect to thank-you page -->
-  <input type="hidden" name="_redirect" value="https://DJUSh0rts.github.io/Datapack-Request-Website/thank-you.html">
+        <label for="details">Idea & Details</label>
+        <textarea id="details" name="details" required></textarea>
+
+        <input type="hidden" name="_redirect" value="https://DJUSh0rts.github.io/Datapack-Request-Website/thank-you.html">
+
         <button class="btn btn-primary" type="submit">📨 Send Request</button>
       </form>
     </div>
 
-    <!-- Email contact info / tips -->
     <aside class="contact-email-box">
       <h3>Contact via Email</h3>
       <p>All requests are handled through email. I usually reply within 24–48 hours.</p>
 
       <div class="email-highlight">
         <span class="icon">📧</span>
-        <!-- Replace with your real email -->
         <span>dj.shorts.business@gmail.com</span>
       </div>
 
-      <p>
-        Prefer typing your own message? You can also email me directly at the address above.
-      </p>
+      <p>You can also email me directly at the address above.</p>
 
       <p style="margin-top:0.8rem; font-weight:600;">Helpful to mention:</p>
       <ul style="margin-top:0.3rem; padding-left:1rem; font-size:0.9rem; color:var(--text-muted);">
@@ -589,7 +605,7 @@
         <span>+</span>
       </div>
       <div class="faq-answer">
-        <p>Yes — I provide instructions and, if needed, can guide you through installation as long as your hosting allows it.</p>
+        <p>Yes — I provide installation instructions and guidance if needed.</p>
       </div>
     </div>
   </div>
@@ -598,14 +614,12 @@
 </main>
 
 <footer>
-  <p>© <span id="year"></span> Minecraft Datapack Studio. Not affiliated with Mojang or Microsoft.</p>
+  <p>© <span id="year"></span> DJ's Datapacks. Not affiliated with Mojang or Microsoft.</p>
 </footer>
 
 <script>
-  // Set year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // FAQ toggles
   document.querySelectorAll(".faq-item").forEach(item => {
     item.querySelector(".faq-question").addEventListener("click", () => {
       item.classList.toggle("open");
