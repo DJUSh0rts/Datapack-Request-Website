@@ -541,7 +541,7 @@
 
   <div class="contact-grid">
     <div class="form-card">
-      <form action="https://formspree.io/f/mbleovyp" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/mbleovyp" method="POST">
 
         <label for="name">Name / Username</label>
         <input id="name" name="name" type="text" required placeholder="Steve, Alex, ServerOwner123">
@@ -556,8 +556,7 @@
         <select id="type" name="type">
           <option>Small tweak / QoL</option>
           <option>Mechanics / SMP</option>
-          <option>Minigame</option>
-          <option>Adventure / map-specific</option>
+          <option>Minigame/Larger Project</option>
         </select>
 
         <label for="details">Idea & Details</label>
@@ -641,7 +640,37 @@
       item.classList.toggle("open");
     });
   });
+
+  // Handle Formspree submit + redirect to thank-you page
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault(); // stop normal browser submit
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          // Go to your thank-you page on success
+          window.location.href = "thank-you.html";
+        } else {
+          alert("There was a problem sending your request. Please try again, or email me directly at dj.shorts.business@gmail.com.");
+        }
+      } catch (err) {
+        alert("Network error while sending your request. Please try again later, or email me directly at dj.shorts.business@gmail.com.");
+      }
+    });
+  }
 </script>
+  
 
 </body>
 </html>
