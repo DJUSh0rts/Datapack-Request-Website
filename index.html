@@ -403,7 +403,8 @@
       <br><br>
 
       <a href="#contact" class="btn btn-primary">📨 Request a Datapack</a>
-      <a href="mailto:you@example.com" class="btn btn-ghost">📧 Email Me Directly</a>
+      <!-- Replace with your real email -->
+      <a href="mailto:dj.shorts.business@gmail.com" class="btn btn-ghost">📧 Email Me Directly</a>
     </div>
 
     <aside class="hero-card">
@@ -501,7 +502,8 @@
   <div class="contact-grid">
     <!-- Styled email form card -->
     <div class="form-card">
-      <form
+      <!-- 🔸 Formspree form: replace action with your real Formspree endpoint -->
+       <Form
   action="https://formspree.io/f/mbleovyp"
   method="POST"
 >
@@ -509,7 +511,7 @@
   <input id="name" name="name" type="text" required placeholder="Steve, Alex, ServerOwner123">
 
   <label for="email">Your Email</label>
-  <input id="email" name="email" type="email" required placeholder="you@example.com">
+  <input id="email" name="email" type="email" required placeholder="youremail.example@gmail.com">
 
   <label for="mc_version">Minecraft Version</label>
   <input id="mc_version" name="mc_version" type="text" placeholder="e.g. 1.21.4">
@@ -527,9 +529,8 @@
 
   <!-- Optional hidden field: redirect to thank-you page -->
   <input type="hidden" name="_redirect" value="https://DJUSh0rts.github.io/Datapack-Request-Website/thank-you.html">
-
-  <button class="btn btn-primary" type="submit">📨 Send Request</button>
-</form>
+        <button class="btn btn-primary" type="submit">📨 Send Request</button>
+      </form>
     </div>
 
     <!-- Email contact info / tips -->
@@ -539,7 +540,8 @@
 
       <div class="email-highlight">
         <span class="icon">📧</span>
-        <span>you@example.com</span>
+        <!-- Replace with your real email -->
+        <span>dj.shorts.business@gmail.com</span>
       </div>
 
       <p>
@@ -608,45 +610,6 @@
     item.querySelector(".faq-question").addEventListener("click", () => {
       item.classList.toggle("open");
     });
-  });
-
-  // Frontend -> backend email sender
-  const form = document.getElementById("datapack-request-form");
-  const statusEl = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-    statusEl.style.display = "block";
-    statusEl.style.color = "var(--text-muted)";
-    statusEl.textContent = "Sending your request...";
-
-    const payload = {
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      mcVersion: document.getElementById("mc_version").value.trim(),
-      type: document.getElementById("type").value,
-      details: document.getElementById("details").value.trim()
-    };
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        // Redirect to thank-you page on success
-        window.location.href = "thank-you.html";
-      } else {
-        statusEl.style.color = "#ff8080";
-        statusEl.textContent = "Something went wrong sending your request. Please try again or email me directly.";
-      }
-    } catch (err) {
-      console.error(err);
-      statusEl.style.color = "#ff8080";
-      statusEl.textContent = "Could not reach the server. Please try again later or email me directly.";
-    }
   });
 </script>
 
